@@ -25,4 +25,13 @@ class TestController extends AbstractController
             $this->testService->test()
         ]);
     }
+    /**
+     * @Route("/count", name="count")
+     */
+    public function count(): Response
+    {
+        return $this->json([
+            $this->testService->count()
+        ]);
+    }
 }
