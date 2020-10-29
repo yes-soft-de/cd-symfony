@@ -11,4 +11,8 @@ class TestService
     {
         return "hi";
     }
+    public function count()
+    {
+        return 4*452;
+    }
 }
