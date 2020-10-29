@@ -22,5 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: code_sniffer
-       run: .\vendor\bin\phpcs
+       run: ./vendor/bin/phpcs
+
       
