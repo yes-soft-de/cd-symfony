@@ -7,13 +7,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: composer_install
-      run: composer install --dev
+      run: echo "installling packges ..."
+           composer install --dev
       
   unit_test:
     runs-on: ubuntu-latest
     steps:
     - name: unit_test
-      run: vendor/bin/simple-phpunit tests
+      run:
+          echo "running unit test ..."
+          vendor/bin/simple-phpunit tests
       
   phpcs:
     runs-on: ubuntu-latest
