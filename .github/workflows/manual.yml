@@ -1,0 +1,23 @@
+name: Symfony Workflow
+
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: composer_install
+      run: composer install --dev
+      
+  unit_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: unit_test
+      run: vendor/bin/simple-phpunit tests
+      
+  phpcs:
+    runs-on: ubuntu-latest
+    steps:
+     - name: code_sniffer
+       run: .\vendor\bin\phpcs
+      
