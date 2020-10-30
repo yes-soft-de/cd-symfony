@@ -13,7 +13,7 @@ class TestService
     }
     public function count()
     {
-		if(true)
+	
         return 4*452;
     }
 }
