@@ -1,6 +1,11 @@
 name: Symfony Workflow
 
-on: [push]
+on:
+  push:
+    
+  pull_request:
+    branches: 
+     -master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,18 +15,14 @@ jobs:
       run: echo "installling packges ..."
            composer install --dev
       
-  unit_test:
+  testing:
     runs-on: ubuntu-latest
     steps:
     - name: unit_test
       run:
           echo "running unit test ..."
           vendor/bin/simple-phpunit tests
-      
-  phpcs:
-    runs-on: ubuntu-latest
-    steps:
-     - name: code_sniffer
-       run: ./vendor/bin/phpcs
+    - name: code_sniffer
+      run: vendor/bin/phpcs
 
       
